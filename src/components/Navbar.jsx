@@ -6,6 +6,9 @@ import { useSelector, useDispatch } from "react-redux";
 import "../styles/Navbar.scss";
 import { Link, useNavigate } from "react-router-dom";
 import { setLogout } from "../redux/state";
+import { FaGlobe } from 'react-icons/fa';
+import { FaPlane } from 'react-icons/fa';
+import { AiOutlineUserAdd } from 'react-icons/ai';
 
 const Navbar = () => {
   const [dropdownMenu, setDropdownMenu] = useState(false);
@@ -47,17 +50,17 @@ const Navbar = () => {
       </div>
       <div className="navbar_right">
       <a href="/" className="host">
-            Experience
+      <FaPlane /> Flight Booking
           </a>
-          <a href="/" className="host">
-            language and region
+          <a href="/languageCard" className="host">
+          <FaGlobe /> language 
           </a>
           </div>
 
       <div className="navbar_right">
         {user ? (
           <a href="/create-listing" className="host">
-            Become A Host
+            <AiOutlineUserAdd />  Become A Host
           </a>
           
         ) : (
